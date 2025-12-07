@@ -1,0 +1,38 @@
+**Allows only one Vendor Bill in Landed Cost (needs Many2many)**
+
+Impacted versions:
+ 
+ - 19.0
+ 
+Steps to reproduce:
+ 
+ 1. Go to Inventory → Operations → Landed Costs
+ 2. Create a new Landed Cost
+ 3. Try to assign multiple Vendor Bills
+ 4. Notice the field Vendor Bill is a Many2one, allowing only a single bill.
+
+ 
+Current behavior:
+ 
+ - Odoo only allows one vendor bill (vendor_bill_id - many2one) to be linked to a Landed Cost.
+ - Many real-world landed cost operations involve multiple invoices such as:
+	1. Freight Invoice
+	2. Handling Charges Invoice
+	3. Customs Invoice
+	4. Transport Invoice
+	5. Port Charges
+ - Users cannot attach all related bills to one landed cost, causing:
+	1. Incorrect audit trails
+	2. Missing traceability
+	3. Need to create multiple landed costs instead of one
+
+
+ 
+Expected behavior:
+ 
+ - Landed Cost should support linking multiple vendor bills, using a Many2many field instead of Many2one
+ - This aligns with real business processes where multiple invoices contribute to the total landed cost of goods.
+ - The user should be able to:
+	1. Add multiple Vendor Bills
+	2. View all related invoices from the Landed Cost form
+	3. Keep cost distribution logic unchanged
