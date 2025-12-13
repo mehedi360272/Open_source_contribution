@@ -1,10 +1,10 @@
 **Allows only one Vendor Bill in Landed Cost (needs Many2many)**
 
 Impacted versions:
- 
- - 17.0
- - 18.0
- - 19.0
+
+ - [x] 17.0
+ - [x] 18.0
+ - [x] 19.0
  
 Steps to reproduce:
  
